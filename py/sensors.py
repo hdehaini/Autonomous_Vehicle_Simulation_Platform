@@ -1,8 +1,14 @@
 import pybullet as p
 import math
 
+def ensure_connected():
+    if not p.isConnected():
+        p.connect(p.GUI)
+
 def simulate_lidar(carId, numRays=36, maxDistance=10):
     """Simulate a LIDAR sensor by casting rays in all directions around the car."""
+
+    ensure_connected()  # Ensure PyBullet is connected
     lidarData = []
     carPos, carOri = p.getBasePositionAndOrientation(carId)
     

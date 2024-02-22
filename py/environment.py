@@ -7,13 +7,12 @@ def load_object(urdf_path, position, orientation=[0, 0, 0, 1]):
     return obj_id
 
 def init_environment():
-    p.connect(p.GUI)
     p.setAdditionalSearchPath(pybullet_data.getDataPath())
     p.setGravity(0, 0, -10)
     planeId = p.loadURDF("plane.urdf")
     
     # Load walls
-    wall_positions = [[5, 0, 1], [-5, 0, 1], [0, 5, 1], [0, -5, 1]]  # Example positions
+    wall_positions = [[2, 0, 1], [-3, 0, 1], [0, 3, 1], [0, -3, 1]]  # Example positions
     for pos in wall_positions:
         load_object("../urdf/wall.urdf", pos, [0, 0, 0])
     
