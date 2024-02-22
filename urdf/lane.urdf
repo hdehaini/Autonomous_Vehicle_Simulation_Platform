@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot name="lane">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.05 2.0 0.01"/> <!-- Adjust size for lane width and length -->
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/> <!-- White color for the lane -->
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.05 2.0 0.01"/> <!-- Match visual size -->
+      </geometry>
+    </collision>
+  </link>
+</robot>
